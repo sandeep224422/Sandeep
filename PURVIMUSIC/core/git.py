@@ -1,6 +1,7 @@
 import asyncio
 import shlex
 from typing import Tuple
+import os
 
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError
@@ -30,6 +31,8 @@ def install_req(cmd: str) -> Tuple[str, str, int, int]:
 
 
 def git():
+    if os.getenv("RENDER") or os.getenv("PRODUCTION"):
+        return  # Skip git operations in production/deployment
     REPO_LINK = config.UPSTREAM_REPO
     if config.GIT_TOKEN:
         GIT_USERNAME = REPO_LINK.split("com/")[1].split("/")[0]

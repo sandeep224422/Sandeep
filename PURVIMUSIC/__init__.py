@@ -7,8 +7,11 @@ from PURVIMUSIC.misc import dbb, heroku
 from SafoneAPI import SafoneAPI
 from .logging import LOGGER
 
+import os
+
 dirr()
-git()
+if os.getenv("RENDER") is None and os.getenv("PRODUCTION") is None:
+    git()
 dbb()
 heroku()
 
