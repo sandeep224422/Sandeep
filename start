@@ -1,5 +1,1 @@
-#!/bin/bash
-
-
-# Start the bot
-python3 -m PURVIMUSIC
+web: python3 -m PURVIMUSIC
