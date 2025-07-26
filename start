@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Start the keepalive server in the background
-python3 keepalive.py &
 
 # Start the bot
 python3 -m PURVIMUSIC
