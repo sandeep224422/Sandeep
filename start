@@ -1,1 +1,1 @@
-web: python3 -m PURVIMUSIC
+worker: python3 -m PURVIMUSIC
